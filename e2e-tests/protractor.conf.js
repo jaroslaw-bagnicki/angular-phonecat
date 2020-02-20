@@ -8,8 +8,10 @@ exports.config = {
   ],
 
   capabilities: {
-    'browserName': 'chrome'
+    // 'browserName': 'chrome',
+    'browserName': 'firefox',
   },
+  directConnect: true,
 
   baseUrl: 'http://localhost:8000/',
 
