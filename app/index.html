@@ -4,11 +4,26 @@
     <meta charset="utf-8">
     <title>My HTML File</title>
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
-    <script src="lib/angular/angular.js"></script>
+    <!-- <script>
+      const start = window.performance.now();
+      window.addEventListener('load', (event) => {
+        console.log('load', window.performance.now() - start);
+      });
+      
+      document.addEventListener('readystatechange', (event) => {
+        console.log(`readyState: ${document.readyState}`, window.performance.now() - start);
+      });
+      
+      document.addEventListener('DOMContentLoaded', (event) => {
+        console.log('DOMContentLoaded', window.performance.now() - start);
+      });
+    
+    </script> -->
   </head>
   <body>
-
+    
     <p>Nothing here {{'yet' + '!'}}</p>
 
+    <script src="lib/angular/angular.js"></script>
   </body>
 </html>
