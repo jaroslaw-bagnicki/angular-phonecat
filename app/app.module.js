@@ -7,8 +7,11 @@ angular
     'phoneDetail',
     'phoneList'
   ])
-  .config(['$routeProvider',
-    function config($routeProvider) {
+  .config(['$locationProvider', '$routeProvider', ($locationProvider, $routeProvider) => {
+      $locationProvider.html5Mode({
+        enabled: true,
+      });
+
       $routeProvider.
         when('/phones', {
           template: '<phone-list></phone-list>'

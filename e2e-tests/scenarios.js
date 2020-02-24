@@ -5,15 +5,15 @@
 
 describe('PhoneCat Application', function() {
 
-  it('should redirect `index.html` to `index.html#!/phones', function() {
+  it('should redirect `index.html` to `/phones', function() {
     browser.get('index.html');
-    expect(browser.getCurrentUrl()).toContain('index.html#!/phones');
+    expect(browser.getCurrentUrl()).toContain('/phones');
   });
 
   describe('View: Phone list', function() {
 
     beforeEach(function() {
-      browser.get('index.html#!/phones');
+      browser.get('/phones');
     });
 
     it('should filter the phone list as a user types into the search box', function() {
@@ -62,7 +62,7 @@ describe('PhoneCat Application', function() {
       query.sendKeys('nexus');
 
       element.all(by.css('.phones li a')).first().click();
-      expect(browser.getCurrentUrl()).toContain('index.html#!/phones/nexus-s');
+      expect(browser.getCurrentUrl()).toContain('/phones/nexus-s');
     });
 
   });
@@ -70,7 +70,7 @@ describe('PhoneCat Application', function() {
   describe('View: Phone detail', function() {
 
     beforeEach(function() {
-      browser.get('index.html#!/phones/nexus-s');
+      browser.get('/phones/nexus-s');
     });
 
     it('should display placeholder page with `phoneId`', function() {
