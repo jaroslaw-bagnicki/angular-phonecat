@@ -1,5 +1,6 @@
 //jshint strict: false
 exports.config = {
+  directConnect: true,
 
   allScriptsTimeout: 11000,
 
@@ -8,7 +9,7 @@ exports.config = {
   ],
 
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'firefox'
   },
 
   baseUrl: 'http://localhost:8000/',
