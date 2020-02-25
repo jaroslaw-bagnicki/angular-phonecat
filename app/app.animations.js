@@ -13,12 +13,19 @@ angular.
 
       element.css({
         display: 'block',
+        opacity: 1,
         position: 'absolute',
-        top: 500,
-        left: 0
+        width: 0,
+        height: 0,
+        top: 200,
+        left: 200
       }).animate({
-        top: 0
+        width: 400,
+        height: 400,
+        top: 0,
+        left: 0
       }, done);
+      
 
       return function animateInEnd(wasCanceled) {
         if (wasCanceled) element.stop();
@@ -28,12 +35,8 @@ angular.
     function animateOut(element, className, done) {
       if (className !== 'selected') return;
 
-      element.css({
-        position: 'absolute',
-        top: 0,
-        left: 0
-      }).animate({
-        top: -500
+      element.animate({
+        opacity: 0
       }, done);
 
       return function animateOutEnd(wasCanceled) {
