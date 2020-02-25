@@ -17,8 +17,16 @@
     <script src="phone-detail/phone-detail.component.js"></script>
   </head>
   <body>
+    <p>{{'lower cap string' | uppercase}}</p>
+    <pre>{{ { foo: "bar", baz: 42 } | json }}</pre>
+    <p>{{ 1459461289000 | date }}</p>
+    <p>{{1459461289000 | date:'MM/dd/yyyy @ h:mma'}}</p>
 
+    <input ng-model="userInput" />
+    <pre>{{ userInput | uppercase }}</pre>
+    
     <div ng-view></div>
+
 
   </body>
 </html>
