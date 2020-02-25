@@ -8,6 +8,8 @@ angular.
     controller: ['$http', '$routeParams', function PhoneDetailController($http, $routeParams) {
         this.setImage = (imageUrl) => this.mainImageUrl = imageUrl;
 
+        this.onDblClick = (imgUrl) => alert(`You dbl clicked image: ${imgUrl}`)
+
         $http.get('phones/' + $routeParams.phoneId + '.json').then(response => {
           this.phone = response.data;
           this.setImage(this.phone.images[0]);
