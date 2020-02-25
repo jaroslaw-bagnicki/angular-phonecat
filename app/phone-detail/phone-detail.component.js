@@ -5,18 +5,12 @@ angular.
   module('phoneDetail').
   component('phoneDetail', {
     templateUrl: 'phone-detail/phone-detail.template.html',
-    controller: ['$http', '$routeParams',
-      function PhoneDetailController($http, $routeParams) {
-        var self = this;
+    controller: ['$http', '$routeParams', function PhoneDetailController($http, $routeParams) {
+        this.setImage = (imageUrl) => this.mainImageUrl = imageUrl;
 
-        self.setImage = function setImage(imageUrl) {
-          self.mainImageUrl = imageUrl;
-        };
-
-        $http.get('phones/' + $routeParams.phoneId + '.json').then(function(response) {
-          self.phone = response.data;
-          self.setImage(self.phone.images[0]);
+        $http.get('phones/' + $routeParams.phoneId + '.json').then(response => {
+          this.phone = response.data;
+          this.setImage(this.phone.images[0]);
         });
-      }
-    ]
+    }]
   });
