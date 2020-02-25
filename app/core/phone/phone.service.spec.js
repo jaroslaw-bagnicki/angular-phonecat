@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Phone', function() {
+fdescribe('Phone', function() {
   var $httpBackend;
   var Phone;
   var phonesData = [
